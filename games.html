@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games - ASH HAWK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Shippori+Mincho:wght@400;500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .game-hero {
+      min-height: 84vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .game-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 55% 65% at 50% 56%, rgba(212,88,10,0.12) 0%, transparent 62%);
+    }
+    .game-phoenix-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background-image:
+        linear-gradient(to bottom, rgba(16,12,10,0.16), rgba(16,12,10,0.62)),
+        radial-gradient(ellipse 65% 72% at 50% 40%, rgba(209,75,19,0.2), transparent 70%),
+        url("assets/red-and-black-japanese-scenery-painting.jpg");
+      background-size: cover, cover, cover;
+      background-position: center, center, center 40%;
+      filter: brightness(0.84) contrast(1.05) saturate(1.08);
+      opacity: 0.86;
+    }
+    .game-hero-content {
+      text-align: center;
+      position: relative;
+      z-index: 3;
+    }
+    .game-kicker {
+      font-family: var(--font-jp);
+      font-size: 0.68rem;
+      letter-spacing: 6px;
+      color: var(--ember);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .game-title {
+      font-family: var(--font-title);
+      color: var(--cream);
+      letter-spacing: 8px;
+      font-size: clamp(3rem, 8vw, 6rem);
+      text-shadow: 0 0 60px rgba(212,88,10,0.22);
+      margin-bottom: 12px;
+    }
+    .game-sub {
+      font-family: var(--font-jp);
+      color: var(--silver);
+      font-size: 0.86rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+    }
+    .samurai-stamps {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .samurai-stamp {
+      border: 1px solid rgba(212,88,10,0.35);
+      color: var(--silver);
+      font-family: var(--font-jp);
+      letter-spacing: 3px;
+      font-size: 0.7rem;
+      padding: 6px 16px;
+      text-transform: uppercase;
+    }
+    .dojo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .dojo-card {
+      background: rgba(24,20,16,0.9);
+      border: 1px solid rgba(46,40,32,0.9);
+      padding: 22px 18px;
+    }
+    .dojo-card-title {
+      font-family: var(--font-title);
+      color: var(--ember);
+      letter-spacing: 3px;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+    .dojo-card-text {
+      color: var(--silver);
+      line-height: 1.65;
+      font-size: 0.95rem;
+    }
+    @media (max-width: 900px) {
+      .dojo-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<canvas id="particles"></canvas>
+
+<header>
+  <a href="index.html" class="logo-link">
+    <img src="assets/ash-hawk-phoenix-logo_2.png" alt="ASH HAWK Games logo" class="site-logo">
+  </a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="games.html">Games</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="game-hero hero">
+  <div class="hero-bg"></div>
+  <div class="game-phoenix-bg"></div>
+  <div class="hero-circle"></div>
+  <div class="hero-circle-inner"></div>
+  <div class="game-hero-content">
+    <p class="game-kicker">First Chronicle</p>
+    <h1 class="game-title">ASHFALL</h1>
+    <p class="game-sub">Rise of the Warrior</p>
+    <div class="samurai-stamps">
+      <span class="samurai-stamp">Action Adventure</span>
+      <span class="samurai-stamp">Open World</span>
+      <span class="samurai-stamp">武士道の選択 - Bushido Choice</span>
+      <span class="samurai-stamp">Singleplayer</span>
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="page-divider"><span class="divider-diamond"></span></div>
+
+  <section class="section">
+    <span class="section-label">01 - Story</span>
+    <h2 class="section-title">The Ashfall War</h2>
+    <div class="card">
+      A kingdom shattered by volcanic ash and civil war is reborn under the shadow of old samurai clans.
+      You are Hawkbound, a swordsman linked to a phoenix spirit that rises when honor is tested.
+    </div>
+  </section>
+
+  <div class="page-divider"><span class="divider-diamond"></span></div>
+
+  <section class="section">
+    <span class="section-label">02 - Samurai Combat</span>
+    <h2 class="section-title">Dojo of Steel and Fire</h2>
+    <div class="dojo-grid">
+      <article class="dojo-card">
+        <p class="samurai-key">剣術 <span class="kanji-translation">Swordsmanship</span></p>
+        <p class="samurai-text">Precision blade combat with stance switching and timing windows.</p>
+      </article>
+      <article class="dojo-card">
+        <p class="samurai-key">鳳凰の型 <span class="kanji-translation">Phoenix Form</span></p>
+        <p class="samurai-text">Use rising-phoenix techniques to counter, dash, and reclaim burned ground.</p>
+      </article>
+      <article class="dojo-card">
+        <p class="samurai-key">名誉の決闘 <span class="kanji-translation">Honor Duel</span></p>
+        <p class="samurai-text">Critical story fights judged by your conduct, not only by victory.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="page-divider"><span class="divider-diamond"></span></div>
+
+  <section class="section">
+    <span class="section-label">03 - World Reaction</span>
+    <h2 class="section-title">Ash, Steel, and Consequence</h2>
+    <div class="card">
+      Villages, shrines, and battlefields evolve from your decisions.
+      Protect civilians and old temples to restore the land, or take ruthless paths that expand the ash front.
+    </div>
+  </section>
+
+  <div class="page-divider"><span class="divider-diamond"></span></div>
+
+  <section class="section">
+    <span class="section-label">04 - Art Direction</span>
+    <h2 class="section-title">Samurai Cinema Aesthetic</h2>
+    <div class="card">
+      Inspired by classic samurai cinema and modern epic visuals: ink-like shadows, ember orange highlights,
+      weather-driven atmosphere, and ritual architecture shaped by Japanese tradition.
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-logo"><span>ASH</span> HAWK GAMES</div>
+  <div class="footer-tagline">From Ashes, Worlds Rise</div>
+  <nav class="footer-nav">
+    <a href="index.html">Home</a>
+    <a href="games.html">Games</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="footer-rule"></div>
+  <p class="footer-copy">ASH HAWK GAMES Copyright 2026 - All rights reserved</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 560" role="img" aria-labelledby="title desc">
+  <title id="title">ASH HAWK Phoenix Logo</title>
+  <desc id="desc">A fire phoenix emblem with ASH HAWK text in Cinzel Decorative style.</desc>
+
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&amp;display=swap');
+      .title {
+        font-family: 'Cinzel Decorative', serif;
+        font-size: 170px;
+        font-weight: 900;
+        letter-spacing: 10px;
+      }
+      .subtitle {
+        font-family: 'Cinzel Decorative', serif;
+        font-size: 34px;
+        font-weight: 700;
+        letter-spacing: 12px;
+      }
+    </style>
+
+    <linearGradient id="emberText" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd49a"/>
+      <stop offset="40%" stop-color="#f47b2a"/>
+      <stop offset="100%" stop-color="#b73914"/>
+    </linearGradient>
+
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Transparent background with subtle framing marks -->
+  <rect x="0" y="0" width="1600" height="560" fill="none"/>
+  <line x1="520" y1="112" x2="1540" y2="112" stroke="#f47b2a" stroke-opacity="0.34" stroke-width="2"/>
+  <line x1="520" y1="446" x2="1540" y2="446" stroke="#f47b2a" stroke-opacity="0.34" stroke-width="2"/>
+
+  <!-- Emblem disk -->
+  <circle cx="280" cy="280" r="220" fill="#120c09"/>
+  <circle cx="280" cy="280" r="216" fill="none" stroke="#f47b2a" stroke-opacity="0.55" stroke-width="4"/>
+  <circle cx="280" cy="280" r="184" fill="none" stroke="#f47b2a" stroke-opacity="0.3" stroke-width="2"/>
+
+  <!-- Phoenix image -->
+  <image href="fire-phoenyx_3.png" x="86" y="88" width="388" height="388" preserveAspectRatio="xMidYMid meet" filter="url(#softGlow)"/>
+
+  <!-- Wordmark -->
+  <text class="title" x="540" y="304" fill="url(#emberText)" filter="url(#softGlow)">ASH HAWK</text>
+  <text class="subtitle" x="546" y="368" fill="#f5eee3" fill-opacity="0.92">FROM ASHES, WORLDS RISE</text>
+</svg>
