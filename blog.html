@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journal - ASH HAWK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Shippori+Mincho:wght@400;500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .blog-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 16px;
+    }
+    .blog-card {
+      background: rgba(33,24,22,0.8);
+      border: 1px solid rgba(46,40,32,0.9);
+      padding: 32px;
+      transition: var(--trans);
+      position: relative;
+    }
+    .blog-card:hover {
+      border-color: rgba(212,88,10,0.28);
+      transform: translateX(5px);
+    }
+    .blog-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 2px;
+      background: transparent;
+      transition: var(--trans);
+    }
+    .blog-card:hover::before {
+      background: var(--ember);
+      box-shadow: var(--glow-sm);
+    }
+    .blog-date {
+      font-family: var(--font-jp);
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .blog-card-title {
+      font-family: var(--font-jp);
+      font-size: 1.3rem;
+      color: var(--cream);
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+    .blog-card-title .accent {
+      color: var(--ember-light);
+    }
+    .blog-excerpt {
+      color: var(--silver);
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+    .blog-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .blog-tag {
+      font-family: var(--font-jp);
+      font-size: 0.6rem;
+      letter-spacing: 2px;
+      padding: 4px 14px;
+      border: 1px solid rgba(212,88,10,0.25);
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    @media (max-width: 900px) {
+      .blog-card { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+<canvas id="particles"></canvas>
+
+<header>
+  <a href="index.html" class="logo-link">
+    <img src="assets/ash-hawk-phoenix-logo_2.png" alt="ASH HAWK Games logo" class="site-logo">
+  </a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="games.html">Games</a>
+    <a href="blog.html">Journal</a>
+    <a href="managers-guide.html">Guide</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" style="min-height:56vh;">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Studio Journal</p>
+    <h1 class="hero-title">Develo<span class="accent">pment</span> Log</h1>
+    <p class="hero-tagline">Chronicles from the forge</p>
+  </div>
+</section>
+
+<main>
+  <div class="page-divider"><span class="divider-diamond"></span></div>
+
+  <section class="section">
+    <span class="section-label">01 - Latest</span>
+    <h2 class="section-title">Recent Entries</h2>
+
+    <div class="blog-grid">
+      <article class="blog-card">
+        <p class="blog-date">2026 — Vol. 03</p>
+        <h3 class="blog-card-title"><span class="accent">ASHFALL</span> — Combat Prototype Complete</h3>
+        <p class="blog-excerpt">
+          The first playable combat prototype is live internally. We built a stance-switching system
+          inspired by classic samurai cinema — three stances, each with unique attack chains and
+          parry windows. Early feedback confirms the "Phoenix Form" counter mechanic is our
+          strongest hook. Next sprint: enemy AI behaviour trees and the first boss encounter.
+        </p>
+        <div class="blog-tags">
+          <span class="blog-tag">Development</span>
+          <span class="blog-tag">Combat Design</span>
+          <span class="blog-tag">ASHFALL</span>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <p class="blog-date">2026 — Vol. 02</p>
+        <h3 class="blog-card-title">Art Direction — <span class="accent">Samurai Cinema</span> Meets Ink Wash</h3>
+        <p class="blog-excerpt">
+          We finalised the visual identity for ASHFALL: a fusion of ink wash painting (sumi-e)
+          and cinematic colour grading. Environments use a desaturated ash palette punctuated
+          by ember-orange highlights. Character silhouettes are sharp, inspired by kabuki
+          blocking. The goal is to make every frame feel like a painted scroll in motion.
+        </p>
+        <div class="blog-tags">
+          <span class="blog-tag">Art Direction</span>
+          <span class="blog-tag">Visual Identity</span>
+          <span class="blog-tag">Sumi-e</span>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <p class="blog-date">2026 — Vol. 01</p>
+        <h3 class="blog-card-title">Studio Launch — <span class="accent">From Ashes</span>, Worlds Rise</h3>
+        <p class="blog-excerpt">
+          ASH HAWK Games is officially founded. Our mission: build story-driven action adventures
+          rooted in Japanese-inspired atmosphere, bushido philosophy, and technical ambition.
+          The flagship project, ASHFALL, begins pre-production. This journal will document
+          every step — the victories, the tough cuts, and the lessons learned.
+        </p>
+        <div class="blog-tags">
+          <span class="blog-tag">Studio</span>
+          <span class="blog-tag">Announcement</span>
+          <span class="blog-tag">ASHFALL</span>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-logo"><span>ASH</span> HAWK GAMES</div>
+  <div class="footer-tagline">From Ashes, Worlds Rise</div>
+  <nav class="footer-nav">
+    <a href="index.html">Home</a>
+    <a href="games.html">Games</a>
+    <a href="blog.html">Journal</a>
+    <a href="managers-guide.html">Guide</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="footer-rule"></div>
+  <p class="footer-copy">ASH HAWK GAMES Copyright 2026 - All rights reserved</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

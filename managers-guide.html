@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manager's Guide - ASH HAWK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Shippori+Mincho:wght@400;500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .guide-hero {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .guide-hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 50% 60% at 50% 50%, rgba(159,42,32,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 30% 40% at 50% 30%, rgba(212,88,10,0.1) 0%, transparent 50%),
+        var(--black);
+    }
+    .guide-hero-content {
+      position: relative;
+      z-index: 4;
+      text-align: center;
+      animation: heroReveal 1.8s cubic-bezier(0.25,0.46,0.45,0.94) both;
+      max-width: 800px;
+      padding: 0 40px;
+    }
+    .guide-badge {
+      display: inline-block;
+      font-family: var(--font-jp);
+      font-size: 0.65rem;
+      letter-spacing: 6px;
+      color: var(--ember);
+      border: 1px solid rgba(212,88,10,0.35);
+      padding: 6px 20px;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+    .guide-main-title {
+      font-family: var(--font-title);
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      color: var(--cream);
+      letter-spacing: 6px;
+      line-height: 1.15;
+      text-shadow: 0 0 50px rgba(209,75,19,0.2);
+      margin-bottom: 16px;
+    }
+    .guide-main-title .accent { color: var(--ember); }
+    .guide-subtitle {
+      font-family: var(--font-jp);
+      font-size: 1rem;
+      color: var(--silver);
+      letter-spacing: 5px;
+      font-style: italic;
+    }
+    .guide-subtitle span { color: var(--ember-light); }
+
+    .guide-intro {
+      max-width: 800px;
+      margin: 0 auto 20px;
+      padding: 32px 36px;
+      background: rgba(33,24,22,0.8);
+      border: 1px solid rgba(46,40,32,0.9);
+      border-left: 3px solid var(--ember);
+      color: var(--silver);
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+    .guide-intro b { color: var(--ember-light); }
+
+    .guide-section-title {
+      font-family: var(--font-jp);
+      font-size: 1.15rem;
+      letter-spacing: 4px;
+      color: var(--cream);
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(212,88,10,0.2);
+      display: inline-block;
+    }
+
+    .expectation-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .expect-card {
+      background: rgba(33,24,22,0.8);
+      border: 1px solid rgba(46,40,32,0.9);
+      padding: 28px 24px;
+      transition: var(--trans);
+      position: relative;
+    }
+    .expect-card:hover {
+      border-color: rgba(212,88,10,0.28);
+      transform: translateY(-3px);
+    }
+    .expect-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: transparent;
+      transition: var(--trans);
+    }
+    .expect-card:hover::before {
+      background: var(--ember);
+      box-shadow: var(--glow-sm);
+    }
+    .expect-kanji {
+      font-family: var(--font-title);
+      font-size: 1.8rem;
+      color: var(--ember);
+      letter-spacing: 3px;
+      margin-bottom: 4px;
+    }
+    .expect-kanji .trans {
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 2px;
+    }
+    .expect-title {
+      font-family: var(--font-jp);
+      font-size: 1rem;
+      color: var(--cream);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .expect-text {
+      color: var(--silver);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .ways-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .way-item {
+      background: rgba(33,24,22,0.8);
+      border: 1px solid rgba(46,40,32,0.9);
+      padding: 24px 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      transition: var(--trans);
+    }
+    .way-item:hover {
+      border-color: rgba(212,88,10,0.28);
+      transform: translateX(5px);
+    }
+    .way-number {
+      font-family: var(--font-title);
+      font-size: 1.6rem;
+      color: var(--ember);
+      opacity: 0.6;
+      flex-shrink: 0;
+      min-width: 36px;
+      line-height: 1;
+    }
+    .way-content h4 {
+      font-family: var(--font-jp);
+      font-size: 1rem;
+      color: var(--cream);
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+    .way-content p {
+      color: var(--silver);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .guide-closing {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 36px;
+      text-align: center;
+      background: rgba(33,24,22,0.8);
+      border: 1px solid rgba(212,88,10,0.2);
+      position: relative;
+    }
+    .guide-closing::before,
+    .guide-closing::after {
+      content: '';
+      position: absolute;
+      width: 50px; height: 50px;
+      border: 1px solid rgba(212,88,10,0.15);
+    }
+    .guide-closing::before { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+    .guide-closing::after { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+    .guide-closing-text {
+      font-family: var(--font-title);
+      font-size: 1.4rem;
+      color: var(--cream);
+      letter-spacing: 3px;
+    }
+    .guide-closing-text .accent { color: var(--ember); }
+
+    @media (max-width: 900px) {
+      .expectation-grid { grid-template-columns: 1fr; }
+      .guide-hero { min-height: 56vh; }
+    }
+  </style>
+</head>
+<body>
+<canvas id="particles"></canvas>
+
+<header>
+  <a href="index.html" class="logo-link">
+    <img src="assets/ash-hawk-phoenix-logo_2.png" alt="ASH HAWK Games logo" class="site-logo">
+  </a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="games.html">Games</a>
+    <a href="blog.html">Journal</a>
+    <a href="managers-guide.html">Guide</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="guide-hero">
+  <div class="guide-hero-bg"></div>
+  <div class="hero-circle"></div>
+  <div class="hero-circle-inner"></div>
+  <div class="guide-hero-content">
+    <p class="guide-badge">Leadership Framework</p>
+    <h1 class="guide-main-title">The <span class="accent">Manager's</span> Guide</h1>
+    <p class="guide-subtitle">Lead with <span>Honour</span>. Build with <span>Purpose</span>. Grow with <span>Discipline</span>.</p>
+  </div>
+</section>
+
+<main>
+  <div class="page-divider"><span class="divider-diamond"></span></div>
+
+  <section class="section">
+    <span class="section-label">01 - Meaning</span>
+    <h2 class="section-title">What "The Manager's Guide" Means</h2>
+    <div class="guide-intro">
+      <b>The Manager's Guide</b> is a personal philosophy of leadership rooted in clarity,
+      accountability, and continuous growth. It is not a rulebook — it is a compass.
+      It asks: <em>What kind of leader do you want to be?</em><br><br>
+      For me, management is not about authority — it is about responsibility.
+      A good manager removes obstacles, sets clear direction, and empowers people
+      to do their best work. Inspired by bushido principles of honour, loyalty,
+      and sincerity, this guide translates ancient values into modern leadership practice.
+    </div>
+  </section>
+
+  <div class="page-divider"><span class="divider-diamond"></span></div>
+
+  <section class="section">
+    <span class="section-label">02 - Expectations</span>
+    <h2 class="section-title">What a Manager Must Uphold</h2>
+    <div class="expectation-grid">
+      <article class="expect-card">
+        <p class="expect-kanji">誠 <span class="trans">Sincerity</span></p>
+        <p class="expect-title">Radical Honesty</p>
+        <p class="expect-text">Communicate clearly and directly. No hidden agendas. Bad news delivered early is better than good news delivered late. Trust is built on truth.</p>
+      </article>
+      <article class="expect-card">
+        <p class="expect-kanji">義 <span class="trans">Righteousness</span></p>
+        <p class="expect-title">Fair Decision-Making</p>
+        <p class="expect-text">Every decision must be justifiable to the team. Favouritism erodes culture. A manager's integrity is measured by what they do when no one is watching.</p>
+      </article>
+      <article class="expect-card">
+        <p class="expect-kanji">勇 <span class="trans">Courage</span></p>
+        <p class="expect-title">Protect the Team</p>
+        <p class="expect-text">Shield the team from noise, bureaucracy, and scope creep. Take responsibility for failures and redirect credit to the people who did the work.</p>
+      </article>
+      <article class="expect-card">
+        <p class="expect-kanji">礼 <span class="trans">Respect</span></p>
+        <p class="expect-title">Empower Through Trust</p>
+        <p class="expect-text">Hire capable people and get out of their way. Micromanagement is disrespect. Provide context, set boundaries, and trust the craft.</p>
+      </article>
+      <article class="expect-card">
+        <p class="expect-kanji">名誉 <span class="trans">Honour</span></p>
+        <p class="expect-title">Lead by Example</p>
+        <p class="expect-text">Your work ethic sets the standard. If you demand excellence, demonstrate it. Be the first to take blame and the last to take credit.</p>
+      </article>
+      <article class="expect-card">
+        <p class="expect-kanji">忠義 <span class="trans">Loyalty</span></p>
+        <p class="expect-title">Invest in Growth</p>
+        <p class="expect-text">A manager's legacy is the people they develop. Prioritise mentorship, skill-building, and career growth as much as project delivery.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="page-divider"><span class="divider-diamond"></span></div>
+
+  <section class="section">
+    <span class="section-label">03 - Practice</span>
+    <h2 class="section-title">Ways to Achieve the Standard</h2>
+    <div class="ways-list">
+      <div class="way-item">
+        <span class="way-number">01</span>
+        <div class="way-content">
+          <h4>Establish a Clear Vision</h4>
+          <p>Define the "why" before the "what" and "how". Share the strategic context so every team member understands how their work connects to the bigger picture. Revisit and reinforce the vision regularly.</p>
+        </div>
+      </div>
+      <div class="way-item">
+        <span class="way-number">02</span>
+        <div class="way-content">
+          <h4>Create Psychological Safety</h4>
+          <p>Build an environment where people can speak up, challenge ideas, and admit mistakes without fear. This is the foundation of innovation and honest retrospectives.</p>
+        </div>
+      </div>
+      <div class="way-item">
+        <span class="way-number">03</span>
+        <div class="way-content">
+          <h4>Practice Structured Feedback</h4>
+          <p>Give feedback that is specific, timely, and actionable. Use frameworks like Situation-Behaviour-Impact (SBI) to keep it objective. Receive feedback with openness, not defensiveness.</p>
+        </div>
+      </div>
+      <div class="way-item">
+        <span class="way-number">04</span>
+        <div class="way-content">
+          <h4>Prioritise Ruthlessly</h4>
+          <p>Not everything is urgent. Use frameworks like the Eisenhower Matrix or MoSCoW to separate the critical from the noise. Protect the team's focus by limiting work-in-progress.</p>
+        </div>
+      </div>
+      <div class="way-item">
+        <span class="way-number">05</span>
+        <div class="way-content">
+          <h4>Reflect and Adapt Continuously</h4>
+          <p>Run regular retrospectives — not just for the project, but for your own leadership. What worked? What didn't? What will you try next? Document lessons and share them.</p>
+        </div>
+      </div>
+      <div class="way-item">
+        <span class="way-number">06</span>
+        <div class="way-content">
+          <h4>Model the Behaviour You Expect</h4>
+          <p>Emotional regulation, punctuality, preparation, follow-through — these are not optional. Your team watches what you do more than they hear what you say. Be the standard.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="page-divider"><span class="divider-diamond"></span></div>
+
+  <section class="section">
+    <div class="guide-closing">
+      <p class="guide-closing-text">
+        "A true leader does not create followers.<br>
+        They create <span class="accent">more leaders</span>."
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-logo"><span>ASH</span> HAWK GAMES</div>
+  <div class="footer-tagline">From Ashes, Worlds Rise</div>
+  <nav class="footer-nav">
+    <a href="index.html">Home</a>
+    <a href="games.html">Games</a>
+    <a href="blog.html">Journal</a>
+    <a href="managers-guide.html">Guide</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="footer-rule"></div>
+  <p class="footer-copy">ASH HAWK GAMES Copyright 2026 - All rights reserved</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
