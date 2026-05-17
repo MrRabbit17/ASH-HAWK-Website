@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    ASH HAWK GAMES - STYLES
    Ghost of Tsushima x Phoenix from Ash
    ============================================================ */
@@ -1159,3 +1159,385 @@ footer {
   .hero-phoenix-figure { width: min(380px, 88vw); bottom: 80px; }
   .footer-nav { flex-wrap: wrap; gap: 18px; }
 }
+
+/* === MANAGERS GUIDE PAGE === */
+.guide-hero {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .guide-hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 50% 60% at 50% 50%, rgba(159,42,32,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 30% 40% at 50% 30%, rgba(212,88,10,0.1) 0%, transparent 50%),
+        var(--black);
+    }
+    .guide-hero-content {
+      position: relative;
+      z-index: 4;
+      text-align: center;
+      animation: heroReveal 1.8s cubic-bezier(0.25,0.46,0.45,0.94) both;
+      max-width: 800px;
+      padding: 0 40px;
+    }
+    .guide-badge {
+      display: inline-block;
+      font-family: var(--font-jp);
+      font-size: 0.65rem;
+      letter-spacing: 6px;
+      color: var(--ember);
+      border: 1px solid rgba(212,88,10,0.35);
+      padding: 6px 20px;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+    .guide-main-title {
+      font-family: var(--font-title);
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      color: var(--cream);
+      letter-spacing: 6px;
+      line-height: 1.15;
+      text-shadow: 0 0 50px rgba(209,75,19,0.2);
+      margin-bottom: 16px;
+    }
+    .guide-main-title .the-e {
+      margin-left: 1px;
+    }
+    .guide-main-title .accent { color: var(--ember); }
+    .guide-subtitle {
+      font-family: var(--font-jp);
+      font-size: 1rem;
+      color: var(--silver);
+      letter-spacing: 5px;
+      font-style: italic;
+    }
+    .guide-subtitle span { color: var(--ember-light); }
+
+    .guide-intro {
+      max-width: 800px;
+      margin: 0 auto 20px;
+      padding: 32px 36px;
+      background: rgba(33,24,22,0.8);
+      border: 1px solid rgba(46,40,32,0.9);
+      border-left: 3px solid var(--ember);
+      color: var(--silver);
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+    .guide-intro b { color: var(--ember-light); }
+
+    .guide-section-title {
+      font-family: var(--font-jp);
+      font-size: 1.15rem;
+      letter-spacing: 4px;
+      color: var(--cream);
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(212,88,10,0.2);
+      display: inline-block;
+    }
+
+    .expectation-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .expect-card {
+      background: rgba(33,24,22,0.8);
+      border: 1px solid rgba(46,40,32,0.9);
+      padding: 28px 24px;
+      transition: var(--trans);
+      position: relative;
+    }
+    .expect-card:hover {
+      border-color: rgba(212,88,10,0.28);
+      transform: translateY(-3px);
+    }
+    .expect-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: transparent;
+      transition: var(--trans);
+    }
+    .expect-card:hover::before {
+      background: var(--ember);
+      box-shadow: var(--glow-sm);
+    }
+    .expect-kanji {
+      font-family: var(--font-title);
+      font-size: 1.8rem;
+      color: var(--ember);
+      letter-spacing: 3px;
+      margin-bottom: 4px;
+    }
+    .expect-kanji .trans {
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 2px;
+    }
+    .expect-title {
+      font-family: var(--font-jp);
+      font-size: 1rem;
+      color: var(--cream);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .expect-text {
+      color: var(--silver);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .ways-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .way-item {
+      background: rgba(33,24,22,0.8);
+      border: 1px solid rgba(46,40,32,0.9);
+      padding: 24px 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      transition: var(--trans);
+    }
+    .way-item:hover {
+      border-color: rgba(212,88,10,0.28);
+      transform: translateX(5px);
+    }
+    .way-number {
+      font-family: var(--font-title);
+      font-size: 1.6rem;
+      color: var(--ember);
+      opacity: 0.6;
+      flex-shrink: 0;
+      min-width: 36px;
+      line-height: 1;
+    }
+    .way-content h4 {
+      font-family: var(--font-jp);
+      font-size: 1rem;
+      color: var(--cream);
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+    .way-content p {
+      color: var(--silver);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .guide-closing {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 36px;
+      text-align: center;
+      background: rgba(33,24,22,0.8);
+      border: 1px solid rgba(212,88,10,0.2);
+      position: relative;
+    }
+    .guide-closing::before,
+    .guide-closing::after {
+      content: '';
+      position: absolute;
+      width: 50px; height: 50px;
+      border: 1px solid rgba(212,88,10,0.15);
+    }
+    .guide-closing::before { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+    .guide-closing::after { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+    .guide-closing-text {
+      font-family: var(--font-title);
+      font-size: 1.4rem;
+      color: var(--cream);
+      letter-spacing: 3px;
+    }
+    .guide-closing-text .accent { color: var(--ember); }
+
+    @media (max-width: 900px) {
+      .expectation-grid { grid-template-columns: 1fr; }
+      .guide-hero { min-height: 56vh; }
+    }
+
+/* === TECHNOLOGY RISK PAGE === */
+.tech-hero {
+      position: relative;
+      min-height: 64vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .tech-hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 45% 55% at 50% 48%, rgba(212,88,10,0.16) 0%, transparent 62%),
+        radial-gradient(ellipse 70% 55% at 50% 70%, rgba(159,42,32,0.12) 0%, transparent 68%),
+        linear-gradient(180deg, rgba(10,8,8,0.2), var(--black));
+    }
+    .tech-hero-content {
+      position: relative;
+      z-index: 4;
+      max-width: 900px;
+      padding: 0 40px;
+      text-align: center;
+      animation: heroReveal 1.8s cubic-bezier(0.25,0.46,0.45,0.94) both;
+    }
+    .tech-badge {
+      display: inline-block;
+      font-family: var(--font-jp);
+      font-size: 0.65rem;
+      letter-spacing: 6px;
+      color: var(--ember);
+      border: 1px solid rgba(212,88,10,0.35);
+      padding: 6px 20px;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+    .tech-main-title {
+      font-family: var(--font-title);
+      font-size: clamp(2.3rem, 6vw, 4.4rem);
+      color: var(--cream);
+      letter-spacing: 6px;
+      line-height: 1.15;
+      text-shadow: 0 0 50px rgba(209,75,19,0.2);
+      margin-bottom: 16px;
+    }
+    .tech-main-title .accent { color: var(--ember); }
+    .tech-subtitle {
+      font-family: var(--font-jp);
+      font-size: 1rem;
+      color: var(--silver);
+      letter-spacing: 5px;
+      font-style: italic;
+    }
+    .tech-subtitle span { color: var(--ember-light); }
+
+    .essay-panel {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 36px;
+      background: rgba(33,24,22,0.82);
+      border: 1px solid rgba(46,40,32,0.9);
+      border-left: 3px solid var(--ember);
+      position: relative;
+    }
+    .essay-panel::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(212,88,10,0.42), transparent);
+    }
+    .essay-kicker {
+      font-family: var(--font-jp);
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: var(--muted);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .essay-title {
+      font-family: var(--font-jp);
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      color: var(--cream);
+      letter-spacing: 3px;
+      line-height: 1.35;
+      margin-bottom: 22px;
+    }
+    .essay-title .accent { color: var(--ember-light); }
+    .essay-body {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .essay-body p {
+      color: var(--silver);
+      font-size: 1.3rem;
+      line-height: 1.82;
+    }
+    .swot-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      max-width: 880px;
+      margin: 18px auto 0;
+    }
+    .swot-tile {
+      background: rgba(33,24,22,0.72);
+      border: 1px solid rgba(46,40,32,0.9);
+      padding: 18px 16px;
+      text-align: center;
+      transition: var(--trans);
+    }
+    .swot-tile:hover {
+      border-color: rgba(212,88,10,0.3);
+      transform: translateY(-3px);
+    }
+    .swot-letter {
+      display: block;
+      font-family: var(--font-title);
+      font-size: 1.7rem;
+      color: var(--ember);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .swot-label {
+      font-family: var(--font-jp);
+      font-size: 0.66rem;
+      letter-spacing: 2px;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .tech-closing {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 34px 32px;
+      text-align: center;
+      background: rgba(33,24,22,0.8);
+      border: 1px solid rgba(212,88,10,0.2);
+      position: relative;
+    }
+    .tech-closing::before,
+    .tech-closing::after {
+      content: '';
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(212,88,10,0.15);
+    }
+    .tech-closing::before { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+    .tech-closing::after { right: 10px; bottom: 10px; border-left: none; border-top: none; }
+    .tech-closing-text {
+      font-family: var(--font-title);
+      font-size: 1.35rem;
+      color: var(--cream);
+      letter-spacing: 3px;
+      line-height: 1.6;
+    }
+    .tech-closing-text .accent { color: var(--ember); }
+
+    @media (max-width: 900px) {
+      .tech-hero { min-height: 56vh; }
+      .essay-panel { padding: 28px 24px; }
+      .swot-strip { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .swot-strip { grid-template-columns: 1fr; }
+      .tech-subtitle { letter-spacing: 3px; }
+    }
