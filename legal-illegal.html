@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>legal or illegal - ASH HAWK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Shippori+Mincho:wght@400;500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .legal-hero {
+      min-height: 62vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 150px 24px 80px;
+    }
+    .legal-hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.65), rgba(8,6,4,0.96)),
+        radial-gradient(circle at 48% 35%, rgba(212,88,10,0.18), transparent 40%);
+      opacity: 0.92;
+      filter: saturate(0.75);
+    }
+    .legal-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 960px;
+      background: rgba(0,0,0,0.35);
+      padding: 32px 48px;
+      border-radius: 4px;
+    }
+    .legal-badge {
+      font-family: var(--font-jp);
+      font-size: 0.85rem;
+      letter-spacing: 4px;
+      color: var(--ember-light);
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .legal-main-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 7vw, 5.5rem);
+      font-weight: 900;
+      color: var(--cream);
+      text-transform: uppercase;
+      letter-spacing: 0;
+      text-shadow: 0 0 40px rgba(0,0,0,0.9), 0 4px 12px rgba(0,0,0,0.6);
+      margin-bottom: 16px;
+    }
+    .legal-subtitle {
+      color: var(--cream);
+      font-size: clamp(1.25rem, 2.6vw, 1.75rem);
+      line-height: 1.55;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .case-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 22px;
+    }
+    .case-card {
+      background: rgba(33,24,22,0.82);
+      border: 1px solid rgba(46,40,32,0.9);
+      padding: 28px;
+      min-height: 100%;
+      position: relative;
+      transition: var(--trans);
+    }
+    .case-card:hover {
+      border-color: rgba(212,88,10,0.32);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 36px rgba(0,0,0,0.24);
+    }
+    .case-marker {
+      font-family: var(--font-jp);
+      font-size: 1.2rem;
+      letter-spacing: 3px;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .case-title {
+      font-family: var(--font-jp);
+      font-size: 1.35rem;
+      letter-spacing: 1px;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+    .case-text {
+      color: var(--cream);
+      font-size: 1.35rem;
+      line-height: 1.7;
+    }
+    .reflection-panel {
+      background: rgba(20,15,14,0.82);
+      border: 1px solid rgba(212,88,10,0.2);
+      padding: 32px;
+      margin-top: 22px;
+    }
+    .reflection-panel p {
+      color: var(--cream);
+      font-size: 1.3rem;
+      line-height: 1.75;
+      margin: 0;
+    }
+    @media (max-width: 980px) {
+      .case-card { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+<canvas id="particles"></canvas>
+
+<header>
+  <a href="index.html" class="logo-link">
+    <img src="assets/ash-hawk-phoenix-logo_2.png" alt="ASH HAWK Games logo" class="site-logo">
+  </a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="games.html">Games</a>
+    <a href="blog.html">Journal</a>
+    <a href="managers-guide.html">Manager's Guide</a>
+    <a href="technology-risk.html">Technology</a>
+    <a href="legal-illegal.html" class="active">Legal or Illegal</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="legal-hero">
+  <div class="legal-hero-bg"></div>
+  <div class="legal-hero-content">
+    <p class="legal-badge">Traffic Light Model</p>
+    <h1 class="legal-main-title">legal or illegal</h1>
+    <p class="legal-subtitle">
+      Three academic AI-use scenarios - one red, one yellow, one green.
+      Can you tell which is which?
+    </p>
+  </div>
+</section>
+
+<main>
+  <div class="page-divider"><span class="divider-diamond"></span></div>
+
+  <section class="section">
+    <span class="section-label">01 - Case Files</span>
+    <h2 class="section-title">Guess the Category</h2>
+
+    <div class="case-grid">
+      <article class="case-card">
+        <p class="case-marker">Case File A</p>
+        <h3 class="case-title">The Ghostwritten Proposal</h3>
+        <p class="case-text">
+          A Master's student must submit a 5000-word research proposal as a graded individual
+          assignment. They ask an AI chatbot to generate the full text, complete with citations
+          to academic papers they have never read. The student submits the AI output unchanged
+          and does not mention any AI assistance. During review, the professor discovers that
+          several cited sources do not exist.
+        </p>
+      </article>
+
+      <article class="case-card">
+        <p class="case-marker">Case File B</p>
+        <h3 class="case-title">The Slide Factory</h3>
+        <p class="case-text">
+          A four-person group is preparing a graded presentation on a business case study. Each
+          member is responsible for one section. One member uses AI to generate their entire set
+          of slides, including analysis and recommendations, without discussing the content with
+          the group. The presentation earns a good mark, but that student struggles to answer
+          follow-up questions about their own section during the Q&A.
+        </p>
+      </article>
+
+      <article class="case-card">
+        <p class="case-marker">Case File C</p>
+        <h3 class="case-title">The Tool-Assisted Researcher</h3>
+        <p class="case-text">
+          A student writing an individual term paper uses AI to explain unfamiliar theories,
+          generate discussion questions to test their understanding, and get feedback on paragraph
+          clarity. Every argument in the final paper is written and fact-checked by the student
+          against primary sources. The student includes an "AI use disclosure" in the appendix
+          describing which tools were used and how.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <div class="page-divider"><span class="divider-diamond"></span></div>
+
+  <section class="section">
+    <span class="section-label">02 - Discussion</span>
+    <h2 class="section-title">Where Do You Draw the Line?</h2>
+    <div class="reflection-panel">
+      <p>
+        Each of the three scenarios above represents a different traffic light category: green
+        (acceptable use), yellow (questionable use), or red (forbidden use). Discuss which case
+        belongs where and why. The traffic light model reminds us that AI use in academia is
+        rarely a purely technical question - it is also about trust, authorship, fairness,
+        and transparency. The same tool can be acceptable, doubtful, or forbidden depending on
+        how much it contributes to the assessed work and whether its role is disclosed.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-logo"><span>ASH</span> HAWK GAMES</div>
+  <div class="footer-tagline">From Ashes, Worlds Rise</div>
+  <nav class="footer-nav">
+    <a href="index.html">Home</a>
+    <a href="games.html">Games</a>
+    <a href="blog.html">Journal</a>
+    <a href="managers-guide.html">Manager's Guide</a>
+    <a href="technology-risk.html">Technology</a>
+    <a href="legal-illegal.html">Legal or Illegal</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="footer-rule"></div>
+  <p class="footer-copy">ASH HAWK GAMES Copyright 2026 - All rights reserved</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
