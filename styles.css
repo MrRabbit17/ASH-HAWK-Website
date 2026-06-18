@@ -7,10 +7,10 @@
 
 /* === VARIABLES === */
 :root {
-  --black:      #100c0a;
-  --deep:       #171110;
-  --dark:       #211816;
-  --ash-dark:   #2a1f1b;
+  --black:      #221b17;
+  --deep:       #2c231e;
+  --dark:       #362b25;
+  --ash-dark:   #40342d;
   --ash:        #3a2c26;
   --ember:      #d14b13;
   --ember-light:#f47b2a;
@@ -49,12 +49,12 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    linear-gradient(to bottom, rgba(16,12,10,0.72), rgba(16,12,10,0.82)),
+    linear-gradient(to bottom, rgba(34,27,23,0.55), rgba(34,27,23,0.68)),
     url("assets/red-and-black-japanese-scenery-painting.jpg");
   background-size: cover, cover;
   background-position: center, center;
   background-repeat: no-repeat;
-  opacity: 0.66;
+  opacity: 0.55;
   z-index: -2;
   pointer-events: none;
 }
@@ -64,7 +64,7 @@ body::after {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse 74% 60% at 50% 42%, rgba(209,75,19,0.14), transparent 68%),
+    radial-gradient(ellipse 74% 60% at 50% 42%, rgba(209,75,19,0.10), transparent 68%),
     repeating-linear-gradient(
       90deg,
       rgba(255,255,255,0.012) 0px,
@@ -103,7 +103,7 @@ header {
 }
 
 header.scrolled {
-  background: rgba(16,12,10,0.78);
+  background: rgba(34,27,23,0.78);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(209,75,19,0.32);
@@ -134,7 +134,7 @@ nav { display: flex; gap: 38px; }
 
 nav a {
   font-family: var(--font-jp);
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--silver);
@@ -174,7 +174,7 @@ nav a.active { color: var(--ember); }
   background:
     radial-gradient(ellipse 55% 65% at 50% 55%, rgba(212,88,10,0.09) 0%, transparent 65%),
     radial-gradient(ellipse 25% 30% at 50% 48%, rgba(140,26,26,0.07) 0%, transparent 55%),
-    radial-gradient(ellipse 80% 50% at 50% 100%, rgba(8,6,4,1) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 50% at 50% 100%, rgba(34,27,23,0.85) 0%, transparent 60%),
     repeating-linear-gradient(
       90deg,
       rgba(255,255,255,0.015) 0px,
@@ -190,13 +190,13 @@ nav a.active { color: var(--ember); }
   inset: 0;
   z-index: 1;
   background-image:
-    linear-gradient(to bottom, rgba(16,12,10,0.14) 0%, rgba(16,12,10,0.42) 58%, rgba(16,12,10,0.72) 100%),
+    linear-gradient(to bottom, rgba(34,27,23,0.10) 0%, rgba(34,27,23,0.30) 58%, rgba(34,27,23,0.55) 100%),
     radial-gradient(ellipse 68% 60% at 50% 44%, rgba(244,123,42,0.18) 0%, rgba(244,123,42,0.05) 58%, transparent 78%),
     url("assets/red-and-black-japanese-scenery-painting.jpg");
   background-size: cover, cover, cover;
   background-position: center, center, center 44%;
   background-repeat: no-repeat;
-  filter: saturate(1.12) contrast(1.04) brightness(0.9);
+  filter: saturate(1.12) contrast(1.04) brightness(0.95);
   opacity: 1;
   animation: heroBgBreath 9s ease-in-out infinite;
 }
@@ -208,7 +208,7 @@ nav a.active { color: var(--ember); }
   right: 0;
   bottom: 0;
   height: 34%;
-  background: linear-gradient(to bottom, rgba(16,12,10,0), rgba(16,12,10,0.5) 56%, rgba(16,12,10,0.7) 100%);
+  background: linear-gradient(to bottom, rgba(34,27,23,0), rgba(34,27,23,0.35) 56%, rgba(34,27,23,0.55) 100%);
 }
 
 .hero-fire-glow {
@@ -458,7 +458,7 @@ nav a.active { color: var(--ember); }
 
 .scroll-text {
   font-family: var(--font-jp);
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   letter-spacing: 4px;
   color: var(--muted);
   text-transform: uppercase;
@@ -553,10 +553,10 @@ h2.section-title::before {
 
 /* === CARDS === */
 .card {
-  background: rgba(33,24,22,0.78);
+  background: rgba(54,43,37,0.78);
   padding: 28px 34px;
   margin-bottom: 16px;
-  border: 1px solid rgba(46,40,32,0.9);
+  border: 1px solid rgba(100,85,72,0.9);
   border-radius: 2px;
   color: var(--silver);
   font-size: 1.3rem;
@@ -601,8 +601,8 @@ h2.section-title::before {
 }
 
 .pillar-card {
-  background: rgba(33,24,22,0.78);
-  border: 1px solid rgba(46,40,32,0.9);
+  background: rgba(54,43,37,0.78);
+  border: 1px solid rgba(100,85,72,0.9);
   padding: 22px 18px;
   text-align: center;
   transition: var(--trans);
@@ -641,7 +641,7 @@ h2.section-title::before {
 }
 
 .samurai-card {
-  background: rgba(33,24,22,0.8);
+  background: rgba(54,43,37,0.8);
   border: 1px solid rgba(212,88,10,0.22);
   padding: 22px 18px;
   transition: var(--trans);
@@ -691,14 +691,14 @@ h2.section-title::before {
 .skills-matrix {
   width: 100%;
   border-collapse: collapse;
-  border: 1px solid rgba(46,40,32,0.9);
+  border: 1px solid rgba(100,85,72,0.9);
   min-width: 640px;
-  background: rgba(33,24,22,0.84);
+  background: rgba(54,43,37,0.84);
 }
 
 .skills-matrix th,
 .skills-matrix td {
-  border: 1px solid rgba(46,40,32,0.9);
+  border: 1px solid rgba(100,85,72,0.9);
   padding: 14px 16px;
   text-align: left;
   vertical-align: top;
@@ -710,7 +710,7 @@ h2.section-title::before {
   letter-spacing: 2px;
   color: var(--cream);
   text-transform: uppercase;
-  background: rgba(45,33,28,0.9);
+  background: rgba(78,60,52,0.9);
 }
 
 .skills-matrix td {
@@ -749,7 +749,7 @@ h2.section-title::before {
 .game-badge {
   display: inline-block;
   font-family: var(--font-jp);
-  font-size: 0.68rem;
+  font-size: 0.78rem;
   letter-spacing: 6px;
   color: var(--ember);
   border: 1px solid rgba(212,88,10,0.35);
@@ -788,7 +788,7 @@ h2.section-title::before {
 
 .genre-tag {
   font-family: var(--font-jp);
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   letter-spacing: 4px;
   padding: 6px 18px;
   border: 1px solid rgba(154,144,128,0.25);
@@ -831,9 +831,9 @@ h2.section-title::before {
 }
 
 .brand-card {
-  background: rgba(33,24,22,0.8);
+  background: rgba(54,43,37,0.8);
   padding: 30px;
-  border: 1px solid rgba(46,40,32,0.9);
+  border: 1px solid rgba(100,85,72,0.9);
   border-radius: 2px;
   transition: var(--trans);
 }
@@ -846,7 +846,7 @@ h2.section-title::before {
 
 .brand-card-label {
   font-family: var(--font-jp);
-  font-size: 0.65rem;
+  font-size: 0.78rem;
   letter-spacing: 5px;
   color: var(--ember);
   text-transform: uppercase;
@@ -874,9 +874,9 @@ h2.section-title::before {
 }
 
 .team-card {
-  background: rgba(33,24,22,0.8);
+  background: rgba(54,43,37,0.8);
   padding: 36px;
-  border: 1px solid rgba(46,40,32,0.9);
+  border: 1px solid rgba(100,85,72,0.9);
   border-radius: 2px;
   transition: var(--trans);
   position: relative;
@@ -903,7 +903,7 @@ h2.section-title::before {
   height: 74px;
   border-radius: 50%;
   border: 1px solid rgba(212,88,10,0.45);
-  background: radial-gradient(circle at 30% 30%, rgba(244,123,42,0.3), rgba(33,24,22,0.94));
+  background: radial-gradient(circle at 30% 30%, rgba(244,123,42,0.3), rgba(54,43,37,0.94));
   color: var(--cream);
   font-family: var(--font-title);
   font-size: 1.3rem;
@@ -956,7 +956,7 @@ h2.section-title::before {
 
 .skill-pill {
   font-family: var(--font-jp);
-  font-size: 0.65rem;
+  font-size: 0.78rem;
   letter-spacing: 2px;
   padding: 4px 14px;
   border: 1px solid rgba(212,88,10,0.25);
@@ -979,9 +979,9 @@ h2.section-title::before {
 }
 
 .contact-block {
-  background: rgba(33,24,22,0.8);
+  background: rgba(54,43,37,0.8);
   padding: 32px;
-  border: 1px solid rgba(46,40,32,0.9);
+  border: 1px solid rgba(100,85,72,0.9);
   transition: var(--trans);
 }
 
@@ -991,7 +991,7 @@ h2.section-title::before {
 
 .contact-label {
   font-family: var(--font-jp);
-  font-size: 0.65rem;
+  font-size: 0.78rem;
   letter-spacing: 5px;
   color: var(--ember);
   text-transform: uppercase;
@@ -1014,7 +1014,7 @@ h2.section-title::before {
 
 .contact-note {
   font-family: var(--font-jp);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: var(--silver);
   margin-top: 8px;
   letter-spacing: 1px;
@@ -1030,7 +1030,7 @@ h2.section-title::before {
 
 .keyword {
   font-family: var(--font-jp);
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   letter-spacing: 3px;
   padding: 6px 18px;
   border: 1px solid rgba(154,144,128,0.25);
@@ -1041,7 +1041,7 @@ h2.section-title::before {
 .slogan-card {
   text-align: center;
   padding: 48px 40px;
-  background: rgba(33,24,22,0.8);
+  background: rgba(54,43,37,0.8);
   border: 1px solid rgba(212,88,10,0.2);
   position: relative;
   overflow: hidden;
@@ -1078,7 +1078,7 @@ footer {
   padding: 60px 64px;
   text-align: center;
   border-top: 1px solid rgba(212,88,10,0.14);
-  background: rgba(18,13,11,0.86);
+  background: rgba(34,27,23,0.86);
 }
 
 .footer-logo {
@@ -1093,7 +1093,7 @@ footer {
 
 .footer-tagline {
   font-family: var(--font-jp);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   letter-spacing: 5px;
   color: var(--muted);
   font-style: italic;
@@ -1109,7 +1109,7 @@ footer {
 
 .footer-nav a {
   font-family: var(--font-jp);
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   letter-spacing: 3px;
   color: var(--muted);
   text-decoration: none;
@@ -1126,9 +1126,9 @@ footer {
 
 .footer-copy {
   font-family: var(--font-jp);
-  font-size: 0.65rem;
+  font-size: 0.78rem;
   letter-spacing: 2px;
-  color: rgba(90,80,64,0.6);
+  color: rgba(120,105,85,0.7);
 }
 
 /* === RESPONSIVE === */
@@ -1153,7 +1153,7 @@ footer {
   }
   .site-logo { width: clamp(112px, 28vw, 148px); }
   nav { gap: 18px; }
-  nav a { font-size: 0.7rem; letter-spacing: 2px; }
+  nav a { font-size: 0.78rem; letter-spacing: 2px; }
   .hero-circle { width: 260px; height: 260px; }
   .hero-circle-inner { width: 200px; height: 200px; }
   .hero-phoenix-figure { width: min(380px, 88vw); bottom: 80px; }
@@ -1188,7 +1188,7 @@ footer {
     .guide-badge {
       display: inline-block;
       font-family: var(--font-jp);
-      font-size: 0.65rem;
+      font-size: 0.78rem;
       letter-spacing: 6px;
       color: var(--ember);
       border: 1px solid rgba(212,88,10,0.35);
@@ -1222,8 +1222,8 @@ footer {
       max-width: 800px;
       margin: 0 auto 20px;
       padding: 32px 36px;
-      background: rgba(33,24,22,0.8);
-      border: 1px solid rgba(46,40,32,0.9);
+      background: rgba(54,43,37,0.8);
+      border: 1px solid rgba(100,85,72,0.9);
       border-left: 3px solid var(--ember);
       color: var(--silver);
       font-size: 1.2rem;
@@ -1250,8 +1250,8 @@ footer {
     }
 
     .expect-card {
-      background: rgba(33,24,22,0.8);
-      border: 1px solid rgba(46,40,32,0.9);
+      background: rgba(54,43,37,0.8);
+      border: 1px solid rgba(100,85,72,0.9);
       padding: 28px 24px;
       transition: var(--trans);
       position: relative;
@@ -1280,13 +1280,13 @@ footer {
       margin-bottom: 4px;
     }
     .expect-kanji .trans {
-      font-size: 0.65rem;
+      font-size: 0.78rem;
       color: var(--muted);
       letter-spacing: 2px;
     }
     .expect-title {
       font-family: var(--font-jp);
-      font-size: 1rem;
+      font-size: 1.15rem;
       color: var(--cream);
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -1294,8 +1294,8 @@ footer {
     }
     .expect-text {
       color: var(--silver);
-      font-size: 1rem;
-      line-height: 1.65;
+      font-size: 1.15rem;
+      line-height: 1.7;
     }
 
     .ways-list {
@@ -1305,8 +1305,8 @@ footer {
       margin-top: 16px;
     }
     .way-item {
-      background: rgba(33,24,22,0.8);
-      border: 1px solid rgba(46,40,32,0.9);
+      background: rgba(54,43,37,0.8);
+      border: 1px solid rgba(100,85,72,0.9);
       padding: 24px 28px;
       display: flex;
       align-items: flex-start;
@@ -1328,15 +1328,15 @@ footer {
     }
     .way-content h4 {
       font-family: var(--font-jp);
-      font-size: 1rem;
+      font-size: 1.15rem;
       color: var(--cream);
       letter-spacing: 2px;
       margin-bottom: 6px;
     }
     .way-content p {
       color: var(--silver);
-      font-size: 1rem;
-      line-height: 1.65;
+      font-size: 1.15rem;
+      line-height: 1.7;
     }
 
     .guide-closing {
@@ -1344,7 +1344,7 @@ footer {
       margin: 0 auto;
       padding: 40px 36px;
       text-align: center;
-      background: rgba(33,24,22,0.8);
+      background: rgba(54,43,37,0.8);
       border: 1px solid rgba(212,88,10,0.2);
       position: relative;
     }
@@ -1386,7 +1386,7 @@ footer {
       background:
         radial-gradient(ellipse 45% 55% at 50% 48%, rgba(212,88,10,0.16) 0%, transparent 62%),
         radial-gradient(ellipse 70% 55% at 50% 70%, rgba(159,42,32,0.12) 0%, transparent 68%),
-        linear-gradient(180deg, rgba(10,8,8,0.2), var(--black));
+        linear-gradient(180deg, rgba(34,27,23,0.15), var(--black));
     }
     .tech-hero-content {
       position: relative;
@@ -1399,7 +1399,7 @@ footer {
     .tech-badge {
       display: inline-block;
       font-family: var(--font-jp);
-      font-size: 0.65rem;
+      font-size: 0.78rem;
       letter-spacing: 6px;
       color: var(--ember);
       border: 1px solid rgba(212,88,10,0.35);
@@ -1430,8 +1430,8 @@ footer {
       max-width: 880px;
       margin: 0 auto;
       padding: 36px;
-      background: rgba(33,24,22,0.82);
-      border: 1px solid rgba(46,40,32,0.9);
+      background: rgba(54,43,37,0.82);
+      border: 1px solid rgba(100,85,72,0.9);
       border-left: 3px solid var(--ember);
       position: relative;
     }
@@ -1479,8 +1479,8 @@ footer {
       margin: 18px auto 0;
     }
     .swot-tile {
-      background: rgba(33,24,22,0.72);
-      border: 1px solid rgba(46,40,32,0.9);
+      background: rgba(54,43,37,0.72);
+      border: 1px solid rgba(100,85,72,0.9);
       padding: 18px 16px;
       text-align: center;
       transition: var(--trans);
@@ -1499,7 +1499,7 @@ footer {
     }
     .swot-label {
       font-family: var(--font-jp);
-      font-size: 0.66rem;
+      font-size: 0.78rem;
       letter-spacing: 2px;
       color: var(--muted);
       text-transform: uppercase;
@@ -1509,7 +1509,7 @@ footer {
       margin: 0 auto;
       padding: 34px 32px;
       text-align: center;
-      background: rgba(33,24,22,0.8);
+      background: rgba(54,43,37,0.8);
       border: 1px solid rgba(212,88,10,0.2);
       position: relative;
     }
