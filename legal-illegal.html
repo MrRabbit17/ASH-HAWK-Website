@@ -9,58 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Shippori+Mincho:wght@400;500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    .legal-hero {
-      min-height: 62vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-      padding: 150px 24px 80px;
-    }
-    .legal-hero-bg {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, rgba(34,27,23,0.70), rgba(34,27,23,0.85)),
-        radial-gradient(circle at 48% 35%, rgba(212,88,10,0.18), transparent 40%);
-      opacity: 0.92;
-      filter: saturate(0.75);
-    }
-    .legal-hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 960px;
-      background: rgba(34,27,23,0.35);
-      padding: 32px 48px;
-      border-radius: 4px;
-    }
-    .legal-badge {
-      font-family: var(--font-jp);
-      font-size: 0.85rem;
-      letter-spacing: 4px;
-      color: var(--ember-light);
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-    .legal-main-title {
-      font-family: var(--font-display);
-      font-size: clamp(2.6rem, 7vw, 5.5rem);
-      font-weight: 900;
-      color: var(--cream);
-      text-transform: uppercase;
-      letter-spacing: 0;
-      text-shadow: 0 0 40px rgba(0,0,0,0.9), 0 4px 12px rgba(0,0,0,0.6);
-      margin-bottom: 16px;
-    }
-    .legal-subtitle {
-      color: var(--cream);
-      font-size: clamp(1.25rem, 2.6vw, 1.75rem);
-      line-height: 1.55;
-      max-width: 760px;
-      margin: 0 auto;
-    }
     .case-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -137,15 +85,14 @@
   </nav>
 </header>
 
-<section class="legal-hero">
-  <div class="legal-hero-bg"></div>
-  <div class="legal-hero-content">
-    <p class="legal-badge">Traffic Light Model</p>
-    <h1 class="legal-main-title">legal or illegal</h1>
-    <p class="legal-subtitle">
-      Three academic AI-use scenarios - one red, one yellow, one green.
-      Can you tell which is which?
-    </p>
+<section class="tech-hero">
+  <div class="tech-hero-bg"></div>
+  <div class="hero-circle"></div>
+  <div class="hero-circle-inner"></div>
+  <div class="tech-hero-content">
+    <p class="tech-badge">Traffic Light Model</p>
+    <h1 class="tech-main-title">Legal or <span class="accent">Illegal</span></h1>
+    <p class="tech-subtitle">Three academic AI-use scenarios - <span>one red</span>, <span>one yellow</span>, <span>one green</span>. Can you tell which is which?</p>
   </div>
 </section>
 

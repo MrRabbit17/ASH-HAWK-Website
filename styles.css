@@ -677,11 +677,11 @@ h2.section-title::before {
   margin-bottom: 10px;
 }
 
-.samurai-text {
-  color: var(--silver);
-  font-size: 1.2rem;
-  line-height: 1.7;
-}
+    .samurai-text {
+      color: var(--silver);
+      font-size: 1.3rem;
+      line-height: 1.7;
+    }
 
 .skills-matrix-wrap {
   margin-top: 18px;
@@ -804,14 +804,14 @@ h2.section-title::before {
   gap: 12px;
 }
 
-.feature-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  color: var(--silver);
-  font-size: 1rem;
-  line-height: 1.6;
-}
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      color: var(--silver);
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
 
 .feature-list li::before {
   content: '鷹';
@@ -1226,7 +1226,7 @@ footer {
       border: 1px solid rgba(100,85,72,0.9);
       border-left: 3px solid var(--ember);
       color: var(--silver);
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       line-height: 1.8;
     }
     .guide-intro b { color: var(--ember-light); }
@@ -1294,7 +1294,7 @@ footer {
     }
     .expect-text {
       color: var(--silver);
-      font-size: 1.15rem;
+      font-size: 1.25rem;
       line-height: 1.7;
     }
 
@@ -1335,7 +1335,7 @@ footer {
     }
     .way-content p {
       color: var(--silver);
-      font-size: 1.15rem;
+      font-size: 1.25rem;
       line-height: 1.7;
     }
 
@@ -1399,11 +1399,11 @@ footer {
     .tech-badge {
       display: inline-block;
       font-family: var(--font-jp);
-      font-size: 0.78rem;
-      letter-spacing: 6px;
-      color: var(--ember);
-      border: 1px solid rgba(212,88,10,0.35);
-      padding: 6px 20px;
+      font-size: 0.85rem;
+      letter-spacing: 4px;
+      color: var(--ember-light);
+      border: 1px solid rgba(244,123,42,0.4);
+      padding: 7px 22px;
       margin-bottom: 24px;
       text-transform: uppercase;
     }
